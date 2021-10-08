@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mb {
+            width: 400px;
+            margin: 100px 600px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            margin: 2px;
+        }
+
+        .op {
+            border: 2px solid black;
+            height: 50px;
+            width: 140px;
+            /* margin-left: 510px; */
+            text-align: center;
+            vertical-align: center;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        let num = 0;
+        function func(params) {
+            let id = document.getElementById('t')
+            id.innerText = (num * 10 + params)
+            num = num * 10 + params
+        }
+        function erase() {
+            let id = document.getElementById('t')
+            if (num === 0)
+                return;
+            num = parseInt(num / 10);
+            if (num == 0)
+                id.innerText = ''
+            else
+                id.innerText = num
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mb">
+        <button class="btn" onclick=func(1);>1</button>
+        <button class="btn" onclick=func(2);>2</button>
+        <button class="btn" onclick=func(3);>3</button>
+        <br>
+        <button class="btn" onclick=func(4);>4</button>
+        <button class="btn" onclick=func(5);>5</button>
+        <button class="btn" onclick=func(6);>6</button>
+        <br>
+        <button class="btn" onclick=func(7);>7</button>
+        <button class="btn" onclick=func(8);>8</button>
+        <button class="btn" onclick=func(9);>9</button>
+        <br>
+        <button style="margin-left: 40px;" class="btn" onclick=erase();>DEL</button>
+        <div class="op" id="t"></div>
+    </div>
+
+</body>
+
+</html>
